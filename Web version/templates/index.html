@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Video Stream</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Video Stream</h1>
+        <div class="video-container">
+            <img id="videoFeed" src="{{ url_for('video_feed') }}" alt="Video Stream">
+        </div>
+        <div class="controls">
+            <h2>Effects</h2>
+            <div class="effect">
+                <input type="checkbox" id="deformation" name="deformation">
+                <label for="deformation">Deformation</label>
+                <input type="range" id="deformationIntensity" min="1" max="10" value="1" class="slider">
+            </div>
+            <div class="effect">
+                <input type="checkbox" id="mirror" name="mirror">
+                <label for="mirror">Mirror</label>
+                <input type="range" id="mirrorIntensity" min="1" max="10" value="1" class="slider">
+            </div>
+            <div class="effect">
+                <input type="checkbox" id="pointillism" name="pointillism">
+                <label for="pointillism">Pointillism</label>
+                <input type="range" id="pointillismSize" min="1" max="10" value="2" class="slider">
+            </div>
+            <div class="effect">
+                <input type="checkbox" id="facemask" name="facemask">
+                <label for="facemask">Face Mask</label>
+                <input type="range" id="facemaskPointSize" min="1" max="20" value="5" class="slider">
+            </div>
+            <div class="effect">
+                <input type="checkbox" id="colorFilter" name="colorFilter">
+                <label for="colorFilter">Color Filter</label>
+                <input type="range" id="colorIntensity" min="1" max="10" value="5" class="slider">
+            </div>
+            <div class="effect">
+                <input type="checkbox" id="blur" name="blur">
+                <label for="blur">Blur</label>
+                <input type="range" id="blurIntensity" min="1" max="10" value="1" class="slider">
+            </div>
+            <div class="effect">
+                <input type="checkbox" id="vignette" name="vignette">
+                <label for="vignette">Vignette</label>
+                <input type="range" id="vignetteIntensity" min="1" max="10" value="1" class="slider">
+            </div>
+            <div class="effect">
+                <input type="checkbox" id="sepia" name="sepia">
+                <label for="sepia">Sepia</label>
+            </div>
+            <div class="effect">
+                <input type="checkbox" id="cartoon" name="cartoon">
+                <label for="cartoon">Cartoon</label>
+            </div>
+            <button id="applyEffects">Apply Effects</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
